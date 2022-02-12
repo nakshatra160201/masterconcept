@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    function validateForm() {
+      var id=document.forms["sgnup"]["email"].value;
+      var validemail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(id);
+      console.log(validemail);
+      if (!validemail)
+      {
+      alert("You have entered an invalid email address!")
+      return false;
+      }
+    
+      var x = document.forms["sgnup"]["password"].value;
+      var y = document.forms["sgnup"]["password-rep"].value;
+      if (x != y) {
+        alert("Password mismatch");
+        return false;
+      }
+    }
+  </script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MasterConcepts</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="`/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/new.css" rel="stylesheet">
+  <head><base target="_parent"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"><link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css"><link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css"><link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.2.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css"><style></style><style type="text/css">/* Chart.js */
+    @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+  
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href=" "><i class="bx bx-home"></i> <span>Home</span></a></li>
+      </ul>
+    </nav>
+  </header><!-- End Header -->
+
+
+  <!--Modal: Login / Register Form-->
+  <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+        <!--Modal cascading tabs-->
+        <div class="modal-c-tabs">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                Register</a>
+            </li>
+          </ul>
+
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 7-->
+            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+              <!--Body-->
+              <form action="/authenticate" method="post">
+              <div class="modal-body mb-1">
+                <div class="md-form form-sm mb-5">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input name="username" type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                  <label  for="modalLRInput10">Your email</label>
+                </div>
+
+                <div class="md-form form-sm mb-4">
+                  <i class="fas fa-lock prefix"></i>
+                  <input type="password" name="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                  <label for="modalLRInput11">Your password</label>
+                </div>
+                <div class="text-center mt-2">
+                  <button type='submit' class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                </div>
+              </div>
+            </form>
+              <!--Footer-->
+              <div class="modal-footer">
+                <div class="options text-center text-md-right mt-1">
+                  <p>Forgot <a href="/forgot" class="blue-text">Password?</a></p>
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                  data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+            <!--/.Panel 7-->
+
+            <!--Panel 8-->
+            <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+              <!--Body-->
+              <form name="sgnup" action="/SignUp" onsubmit="return validateForm()" method="post">
+                
+              
+                <div class="modal-body">
+                  <div class="md-form form-sm mb-4">
+                    <input name="name" type='text' class="form-control form-control-sm validate">
+                    <label  for="modalLRInput12">Name</label>
+                  </div>
+                <div class="md-form form-sm mb-5">
+                  <input name="email" type="email"  class="form-control form-control-sm validate">
+                  <label  for="modalLRInput12">Your email</label>
+                </div>
+                <div class="md-form form-sm mb-4">
+                  
+                  <input name="gender" type='text' class="form-control form-control-sm validate">
+                  <label  for="modalLRInput14">Gender(M/F)</label>
+                </div>
+
+                <div class="md-form form-sm mb-5">
+                  
+                  <input name="psw" type="password"  class="form-control form-control-sm validate">
+                  <label  for="modalLRInput13">Your password</label>
+                </div>
+
+                <div class="md-form form-sm mb-4">
+                
+                  <input name="pswrepeat" type="password"  class="form-control form-control-sm validate">
+                  <label  for="modalLRInput14">Repeat password</label>
+                </div>
+
+                <div class="text-center form-sm mt-2">
+                  <button type="submit" class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                </div>
+
+              </div>
+            </form>
+              <!--Footer-->
+              <div class="modal-footer">
+                <div class="options text-right">
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                  data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!--/.Panel 8-->
+          </div>
+
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <p><h1><span class="typed" data-typed-items="Welcome to MasterConcepts"></span></h1></p>
+      
+       
+        <div class="text-center">
+          <a href="" style="font-size: 1.2rem" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">
+            LogIn / Register</a>
+        </div>
+    
+ 
+    </div>
+  </section><!-- End Hero -->
+  
+  
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/typed.js/typed.min.js"></script>
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/mainnew.js"></script>
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  </body>
+</html>

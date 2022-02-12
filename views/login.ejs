@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        // Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+    </script>
+    <style>
+      .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
+      /* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 8px;
+  margin-bottom: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+.login{
+  width: 50%;
+  padding: 120px 120px;
+  margin: 20px 350px;
+
+}
+.signup-btn{
+    background-color:skyblue;
+}
+      </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="homecss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" >
+    <title>MasterConcepts</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MasterConcepts</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/login">Student</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">SignUp</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--FORM-->
+      <div class="login">
+      <form action="/authenticate" method="post">
+        <div class="imgcontainer">
+          <img src="data:image/png;base64,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" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+      
+          <button style="margin:5px" type="submit" >Login</button>
+        </div>
+      </form>
+      <div class="container">
+      <form action='/signup'><button class="signup-btn" style="margin:5px" type="submit" action='/signup'>Sign Up</button></form>
+      <form action='/forgot'><button class="signup-btn" style="margin:5px" action="/forgot">Forgot password?</button></form>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+  </body>
+  <div class="se-pre-con"></div>
+</html>
